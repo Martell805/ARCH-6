@@ -24,11 +24,11 @@ public class BookController {
     }
 
     @MutationMapping
-    public Book createBook(@Argument String title, @Argument String authorName, @Argument String genre) {
+    public Book createBook(@Argument String name, @Argument String author, @Argument String genre) {
         Book book = new Book();
         book.setGenre(genre);
-        book.setName(title);
-        book.setAuthor(authorName);
+        book.setName(name);
+        book.setAuthor(author);
         book = bookRepository.save(book);
 
         return book;
